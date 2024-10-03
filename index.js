@@ -1,6 +1,7 @@
 
 import express from 'express'
 import mongoose from 'mongoose';
+import cors from 'cors'
 import todoRouter from './routes/todo.js';
 import userRouter from './routes/user.js';
 
@@ -22,7 +23,7 @@ app.use(express.json());
 //     console.log(req.query);
 //     res.json('same to you')
 // })
-
+app.use(cors())
 app.use(todoRouter);
 app.use(userRouter);
 //listen for incoming requests
